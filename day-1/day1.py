@@ -28,29 +28,37 @@ def main():
         if sum(l) > max_calories:
             # set the max calories to the sum of the list
             max_calories = sum(l)
+    
+   
 
     # print the max calories
     print(max_calories)
 
 
-    # //FOR PART TWO// 
+    
+ # //FOR PART TWO// 
 
-    # now we need to find the sum of the top three max calories
-    # initialize the list of max calories
-    max_calories = []
-
+    # now we need to find the sum of the top three sum of calories
+    # initialize the max calories
+    max_calories = 0
+    sumlist = []
     # for each list
     for l in lists:
-        # add the max calories to the list of max calories
-        max_calories.append(max(l))
+        # if the sum of the list is greater than the max calories
+        if sum(l) > max_calories:
+            # set the max calories to the sum of the list
+            max_calories = sum(l)
+            sumlist.append(max_calories)
+    sumlist.sort()
+    print(sumlist)
+    print(sumlist[-3:])
+    print(sum(sumlist[-3:]))
 
-    # sort the list of max calories
-    max_calories.sort()
 
-    # print the sum of the top three max calories
-    print(sum(max_calories[-3:]))
-    
 
 
 if __name__ == '__main__':
     main()
+
+
+
