@@ -32,5 +32,25 @@ def main():
     # print the max calories
     print(max_calories)
 
+
+    # //FOR PART TWO// 
+
+    # now we need to find the sum of the top three max calories
+    # initialize the list of max calories
+    max_calories = []
+
+    # for each list
+    for l in lists:
+        # add the max calories to the list of max calories
+        max_calories.append(max(l))
+
+    # sort the list of max calories
+    max_calories.sort()
+
+    # print the sum of the top three max calories
+    print(sum(max_calories[-3:]))
+    
+
+
 if __name__ == '__main__':
     main()
