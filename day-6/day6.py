@@ -60,5 +60,41 @@ def find_marker(data):
     # return -1 if no marker is found
     return -1
 
+def find_marker_pt2(data):
+#    A start-of-message marker is just like a start-of-packet marker, except it consists of 14 distinct characters rather than 4.
+
+
+# Here are the first positions of start-of-message markers for all of the above examples:
+
+# mjqjpqmgbljsphdztnvjfqwrcgsmlb: first marker after character 19
+# bvwbjplbgvbhsrlpgdmjqwftvncz: first marker after character 23
+# nppdvjthqldpwncqszvftbrmjlhg: first marker after character 23
+# nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg: first marker after character 29
+# zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw: first marker after character 26
+# How many characters need to be processed before the first start-of-message marker is detected?
+
+    # initialize the marker
+    marker = ''
+
+    # loop through the data
+    for i in range(len(data)):
+        # add the next character to the marker
+        marker += data[i]
+
+        # if the marker is 14 characters long
+        if len(marker) == 14:
+            # if the marker is unique
+            if len(set(marker)) == 14:
+                # return the index
+                return i + 1
+
+            # remove the first character from the marker
+            marker = marker[1:]
+
+    # return -1 if no marker is found
+    return -1
+
+    
+
 if __name__ == '__main__':
     main()
