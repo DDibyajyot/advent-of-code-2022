@@ -4,7 +4,7 @@ def main():
     #instead of adding 2 per cycle to make the calculation harder, we can just convert every addx to noop+addx and then add 1 per cycle ie addx
     ops = open('input.txt').read().strip().replace('addx', 'noop\n').splitlines()
 
-
+    #setting x to 0, total_strength to 0 and crt to an empty list
     x, total_strength, crt = 1, 0, []
     for cycle, op in enumerate(ops):
         if cycle in range(19, 221, 40):
